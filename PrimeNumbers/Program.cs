@@ -12,9 +12,30 @@ namespace PrimeNumbers
             else
             {
                 Console.WriteLine("2");
+
+                int mod6Value;
+                int divisor;
+                int sqrt;
+                bool isPrime = true;
                 for (int i = 3; i <= limit; i+=2)
                 {
-                   
+                    mod6Value = i % 6;
+                    if (mod6Value == 1 || mod6Value == 5)
+                    {
+                        sqrt = (int)Math.Sqrt((double)i);
+                        for (divisor = 3; divisor < sqrt; divisor+=2)
+                        {
+                            if (i%divisor == 0)
+                            {
+                                isPrime = false;
+                                break;
+                            }
+                        }
+                        if (isPrime)
+                            Console.WriteLine(i.ToString());
+
+                        isPrime = true;
+                    }
                 }
             }
             Console.ReadLine();
