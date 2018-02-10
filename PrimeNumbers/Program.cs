@@ -23,7 +23,7 @@ namespace PrimeNumbers
                     if (mod6Value == 1 || mod6Value == 5)
                     {
                         sqrt = (int)Math.Sqrt((double)i);
-                        for (divisor = 3; divisor < sqrt; divisor+=2)
+                        for (divisor = 3; divisor <= sqrt; divisor+=2)
                         {
                             if (i%divisor == 0)
                             {
